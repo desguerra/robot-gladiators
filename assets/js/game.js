@@ -1,3 +1,13 @@
+/* GAME FUNCTIONS */
+
+// function to generate a random numeric value
+var randomNumber = function(min, max) {
+    var value = Math.floor(Math.random() * (max - min + 1)) + min;
+  
+    return value;
+};
+
+// fight function
 var fight = function(enemy) {
 
     while(playerInfo.health > 0 && enemy.health > 0) {
@@ -150,13 +160,7 @@ var shop = function() {
       }
 };
 
-// function to generate a random numeric value
-var randomNumber = function(min, max) {
-    var value = Math.floor(Math.random() * (max - min + 1)) + min;
-  
-    return value;
-};
-
+/* GAME INFO / VARIABLES */
 var playerInfo = {
     name: window.prompt("What is your robot's name?"),
     health: 100,
@@ -204,16 +208,5 @@ var enemyInfo = [
     }
 ];
 
-// start the game after all initial functions/variables are declared!
+/* RUN GAME */
 startGame();
-
-// fight();
-
-
-
-
-// Game States
-// "WIN" - Player robot has defeated all enemy-robots
-//    * Fight all enemy-robots
-//    * Defeat each enemy-robot
-// "LOSE" - Player robot's health is zero or less
